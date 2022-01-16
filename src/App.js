@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
+import UsersFinder from './components/UserFinder';
+import {useState} from 'react'
+
 function App() {
+
+  const [ a, b] = useState(false)
+
+  function buttonClickHandler(){
+    b(prev => !prev)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <button onClick={buttonClickHandler}>toggler</button>
+    {
+      a ? <UsersFinder/> :null
+    }
+    
+    </>
+    
   );
 }
 
